@@ -1,0 +1,19 @@
+import matplotlib.pyplot as plt
+
+# Dados do portfólio
+investimentos = ['Tesouro Direto Prefixado', 'Notas do Tesouro Nacional', 'Ações da Vale', 'Ações da JBS']
+percentuais = [40, 30, 20, 10]  # Percentuais correspondentes aos investimentos
+
+# Configurações do gráfico
+cores = ['#FF9999', '#66B3FF', '#99FF99', '#FFCC99']  # Cores para cada fatia
+explode = (0.1, 0, 0, 0)  # Explode a primeira fatia (Tesouro Direto Prefixado)
+
+# Criação do gráfico de pizza
+plt.pie(percentuais, explode=explode, labels=investimentos, colors=cores, autopct='%1.1f%%', startangle=90)
+
+# Configurações adicionais
+plt.axis('equal')  # Para garantir que o gráfico seja uma circunferência e não uma elipse
+plt.title('Distribuição do Portfólio de Investimentos')  # Título do gráfico
+
+# Exibição do gráfico
+plt.show()
