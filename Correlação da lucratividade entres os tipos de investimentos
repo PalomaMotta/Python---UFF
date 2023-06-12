@@ -1,0 +1,32 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Dados fictícios da lucratividade dos investimentos nos últimos 6 anos
+anos = [2018, 2019, 2020, 2021, 2022, 2023]
+lucratividade_vale = [12.5, 15.2, -8.7, 18.9, 10.4, 13.7]  # Lucratividade anual da ação VALE3.SA em porcentagem
+lucratividade_jbs = [9.8, 14.6, 7.3, 16.2, 11.5, 8.9]  # Lucratividade anual da ação JBSS3.SA em porcentagem
+lucratividade_prefixado = [6.5, 5.2, 4.8, 5.3, 6.1, 6.8]  # Lucratividade anual do Tesouro Direto Prefixado em porcentagem
+lucratividade_ntn = [3.2, 4.1, 4.8, 4.3, 5.2, 5.9]  # Lucratividade anual das Notas do Tesouro Nacional em porcentagem
+
+# Criação de um DataFrame com os dados
+data = pd.DataFrame({
+    'VALE3.SA': lucratividade_vale,
+    'JBSS3.SA': lucratividade_jbs,
+    'Tesouro Direto Prefixado': lucratividade_prefixado,
+    'Notas do Tesouro Nacional': lucratividade_ntn
+}, index=anos)
+
+# Cálculo da matriz de correlação
+correlation_matrix = data.corr()
+
+# Criação do gráfico de correlação
+plt.figure(figsize=(8, 6))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
+
+# Configurações adicionais
+plt.title('Correlação dos Investimentos nos Últimos 6 Anos')
+plt.xticks(rotation=45)
+
+# Exibição do gráfico
+plt.show()
