@@ -1,0 +1,17 @@
+import matplotlib.pyplot as plt
+
+# Dados da lucratividade do investimento ao longo do tempo (exemplo fictício)
+anos = [2018, 2019, 2020, 2021, 2022, 2023]
+lucratividade = [4.5, 5.2, 6.8, 7.1, 6.5, 7.3]  # Lucratividade anual em porcentagem
+
+# Criação do gráfico de linha
+plt.plot(anos, lucratividade, marker='o', linestyle='-', color='b')
+
+# Configurações adicionais
+plt.title('Lucratividade do Investimento em Tesouro Direto Prefixado')
+plt.xlabel('Ano')
+plt.ylabel('Lucratividade (%)')
+plt.grid(True)
+
+# Exibição do gráfico
+plt.show()
